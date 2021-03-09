@@ -4,7 +4,7 @@
     "es6": true,
     "browser": true
   },
-  "extends": ["airbnb", "airbnb/hooks", "eslint:recommended"],
+  "extends": ["airbnb", "airbnb/hooks", "eslint:recommended", "prettier/react"],
   "settings": {
     "import/resolver": {
       "node": {
@@ -29,6 +29,9 @@
     "react/forbid-prop-types": "off",
     "react/jsx-filename-extension": "off",
     "react/jsx-props-no-spreading": "off",
-    "react/require-default-props": "off"
+    "react/require-default-props": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "object-curly-newline": "off",
+    "operator-linebreak": "off"
   }
 }

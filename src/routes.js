@@ -2,14 +2,15 @@ import React from 'react';
 import { Navigate } from 'react-router-dom';
 import DashboardLayout from 'src/layouts/DashboardLayout';
 import MainLayout from 'src/layouts/MainLayout';
-import AccountView from 'src/views/account/AccountView';
-import CustomerListView from 'src/views/customer/CustomerListView';
-import DashboardView from 'src/views/reports/DashboardView';
-import LoginView from 'src/views/auth/LoginView';
-import NotFoundView from 'src/views/errors/NotFoundView';
-import ProductListView from 'src/views/product/ProductListView';
-import RegisterView from 'src/views/auth/RegisterView';
-import SettingsView from 'src/views/settings/SettingsView';
+import AccountView from 'src/pages/account/AccountView';
+import CustomerListView from 'src/pages/customer/CustomerListView';
+import DashboardView from 'src/pages/reports/DashboardView';
+import LoginView from 'src/pages/auth/LoginView';
+import NotFoundView from 'src/pages/errors/NotFoundView';
+import ProductListView from 'src/pages/product/ProductListView';
+import RegisterView from 'src/pages/auth/RegisterView';
+import SettingsView from 'src/pages/settings/SettingsView';
+import Homepage from './pages/homepage/Homepage.component';
 
 const routes = [
   {
@@ -31,7 +32,7 @@ const routes = [
       { path: 'login', element: <LoginView /> },
       { path: 'register', element: <RegisterView /> },
       { path: '404', element: <NotFoundView /> },
-      { path: '/', element: <Navigate to="/app/dashboard" /> },
+      { path: '/', element: <Homepage /> },
       { path: '*', element: <Navigate to="/404" /> }
     ]
   }
