@@ -10,7 +10,8 @@ import NotFoundView from 'src/pages/errors/NotFoundView';
 import ProductListView from 'src/pages/product/ProductListView';
 import RegisterView from 'src/pages/auth/RegisterView';
 import SettingsView from 'src/pages/settings/SettingsView';
-import Homepage from './pages/homepage/Homepage.component';
+import Homepage from './pages/homepage';
+import SearchResult from './pages/search-result';
 
 const routes = [
   {
@@ -33,6 +34,7 @@ const routes = [
       { path: 'register', element: <RegisterView /> },
       { path: '404', element: <NotFoundView /> },
       { path: '/', element: <Homepage /> },
+      { path: '/searchResult', element: <SearchResult /> },
       { path: '*', element: <Navigate to="/404" /> }
     ]
   }

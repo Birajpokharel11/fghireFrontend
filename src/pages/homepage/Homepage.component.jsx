@@ -6,7 +6,8 @@ import Searchbar from 'src/components/Searchbar';
 
 const useStyles = makeStyles(() => ({
   heroContainer: {
-    backgroundImage: `url(${'static/images/banner.jpg'})`,
+    // backgroundImage: `url(${'static/images/banner.jpg'})`,
+    backgroundColor: '#111',
     height: '100%',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
@@ -26,6 +27,12 @@ const useStyles = makeStyles(() => ({
     paddingBottom: 20
   }
 }));
+
+const list = [
+  { id: 1, name: 'Agency' },
+  { id: 2, name: 'Freelancer' },
+  { id: 1, name: 'Projects' }
+];
 
 const Homepage = () => {
   const classes = useStyles();
@@ -48,7 +55,7 @@ const Homepage = () => {
         </Typography>
       </Grid>
       <Grid item style={{ marginTop: 60, marginBottom: 10 }}>
-        <Searchbar />
+        <Searchbar list={list} />
       </Grid>
     </Grid>
   );

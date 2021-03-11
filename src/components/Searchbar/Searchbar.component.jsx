@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
   Paper,
   // TextField,
@@ -8,6 +9,7 @@ import {
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 // import SearchBar from 'material-ui-search-bar';
+import { Link as RouterLink } from 'react-router-dom';
 
 import SearchIcon from '@material-ui/icons/Search';
 import { Dropdown } from './components';
@@ -41,12 +43,13 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const Seachbar = () => {
+const Searchbar = (props) => {
+  const { list } = props;
   const classes = useStyles();
   return (
     <div className={classes.root}>
       <Paper elevation={1} style={{ borderRadius: '25px 0 0 25px' }}>
-        <Dropdown />
+        <Dropdown list={list} />
       </Paper>
       {/* <Paper style={{ marginLeft: 5 }}>
         <TextField
@@ -70,16 +73,22 @@ const Seachbar = () => {
           inputProps={{ 'aria-label': 'find here' }}
         />
         <Divider className={classes.divider} orientation="vertical" />
-        <IconButton
-          type="submit"
-          className={classes.iconButton}
-          aria-label="search"
-        >
-          <SearchIcon />
-        </IconButton>
+        <RouterLink to="/searchResult">
+          <IconButton
+            type="submit"
+            className={classes.iconButton}
+            aria-label="search"
+          >
+            <SearchIcon />
+          </IconButton>
+        </RouterLink>
       </Paper>
     </div>
   );
 };
 
-export default Seachbar;
+Searchbar.propTypes = {
+  list: PropTypes.array
+};
+
+export default Searchbar;

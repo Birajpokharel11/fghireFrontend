@@ -1,5 +1,6 @@
 import React from 'react';
-import TextField from '@material-ui/core/TextField';
+import PropTypes from 'prop-types';
+import { TextField, Popper } from '@material-ui/core';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -13,25 +14,31 @@ const useStyles = makeStyles({
   }
 });
 
-const options = [
-  { id: 1, name: 'Agency' },
-  { id: 2, name: 'Freelancer' },
-  { id: 1, name: 'Projects' }
-];
+const PopperMy = (props) => {
+  return (
+    <Popper
+      {...props}
+      style={{ width: 235, marginTop: 10 }}
+      placement="bottom-start"
+    />
+  );
+};
 
-export default function Dropdown() {
+export default function Dropdown(props) {
+  const { list } = props;
+
   const classes = useStyles();
 
   return (
     <Autocomplete
       id="job-select-demo"
       style={{ width: 250, border: 'none', borderRadius: '25px 0 0 25px' }}
-      options={options}
+      options={list}
       classes={{
         option: classes.option
       }}
-      autoSelect
       autoHighlight
+      PopperComponent={PopperMy}
       getOptionLabel={(option) => option.name}
       renderInput={(params) => (
         <TextField
@@ -40,10 +47,11 @@ export default function Dropdown() {
           style={{
             backgroundColor: '#fff',
             borderRadius: '25px 0 0 25px',
-            border: 'none'
-            // padding: 5
+            padding: '7px 5px 0px 15px'
           }}
-          variant="outlined"
+          InputProps={{ ...params.InputProps, disableUnderline: true }}
+          InputLabelProps={{ shrink: false }}
+          // variant="outlined"
           label=""
           // margin="normal"
         />
@@ -51,3 +59,7 @@ export default function Dropdown() {
     />
   );
 }
+
+Dropdown.propTypes = {
+  list: PropTypes.array
+};
