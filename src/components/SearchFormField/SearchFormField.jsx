@@ -10,7 +10,8 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     padding: '2px 4px',
     alignItems: 'center',
-    borderRadius: '0 25px 25px 0'
+    borderRadius: '0 25px 25px 0',
+    height: 56
     // width: 400
   },
   input: {
@@ -33,7 +34,7 @@ const SeachFormField = () => {
     <Paper elevation={1} className={classes.searchContainer}>
       <InputBase
         className={classes.input}
-        placeholder="Find Here"
+        placeholder="Search Here"
         inputProps={{ 'aria-label': 'find here' }}
       />
       <Divider className={classes.divider} orientation="vertical" />

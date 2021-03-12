@@ -37,7 +37,8 @@ export default function Dropdown(props) {
       classes={{
         option: classes.option
       }}
-      autoHighlight
+      // autoHighlight
+      defaultValue={{ id: 0, name: 'Category' }}
       PopperComponent={PopperMy}
       getOptionLabel={(option) => option.name}
       renderInput={(params) => (

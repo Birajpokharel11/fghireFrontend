@@ -17,17 +17,28 @@ import SelectFormField from 'src/components/SelectFormField';
 //   },
 // }));
 
+const list = [
+  { id: 1, name: 'Relevance' },
+  { id: 2, name: 'Newest First' }
+];
+
 const TopRight = () => {
   // const classes = useStyles();
   return (
-    <>
-      <Grid item lg={5}>
+    <Grid
+      item
+      container
+      direction="row"
+      justify="space-between"
+      alignItems="flex-start"
+    >
+      <Grid item lg={7}>
         <SearchFormField />
       </Grid>
-      <Grid item lg={5}>
-        <SelectFormField />
+      <Grid item lg={5} align="right">
+        <SelectFormField list={list} />
       </Grid>
-    </>
+    </Grid>
   );
 };
 

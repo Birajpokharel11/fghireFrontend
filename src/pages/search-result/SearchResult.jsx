@@ -1,8 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Grid } from '@material-ui/core';
-import { TopSection } from './components';
-import TopRight from './components/topright/TopRight';
+import { Container, Grid } from '@material-ui/core';
+import { TopSection, TopRight, LeftAccordion, MiddleCard } from './components';
 
 const useStyles = makeStyles(() => ({
   topSection: {
@@ -28,28 +27,27 @@ const SearchResult = () => {
           <TopSection />
         </Grid>
       </Grid>
-      <Grid
-        container
-        item
-        direction="row"
-        justify="space-around"
-        alignItems="flex-start"
-      >
-        <Grid item lg={5}>
-          left content
-        </Grid>
-        <Grid item container direction="column" lg={7}>
-          <Grid
-            item
-            container
-            direction="row"
-            justify="space-between"
-            alignItems="flex-start"
-          >
-            <TopRight />
+      <Container>
+        <Grid
+          container
+          item
+          direction="row"
+          justify="space-around"
+          alignItems="flex-start"
+        >
+          <Grid item lg={5}>
+            <LeftAccordion />
+          </Grid>
+          <Grid item container direction="column" lg={7} spacing={3}>
+            <Grid item>
+              <TopRight />
+            </Grid>
+            <Grid item>
+              <MiddleCard />
+            </Grid>
           </Grid>
         </Grid>
-      </Grid>
+      </Container>
     </Grid>
   );
 };
