@@ -34,7 +34,7 @@ const routes = [
       { path: 'register', element: <RegisterView /> },
       { path: '404', element: <NotFoundView /> },
       { path: '/', element: <Homepage /> },
-      { path: '/searchResult', element: <SearchResult /> },
+      { path: '/search', element: <SearchResult /> },
       { path: '*', element: <Navigate to="/404" /> }
     ]
   }

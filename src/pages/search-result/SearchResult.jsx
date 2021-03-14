@@ -1,7 +1,13 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Container, Grid } from '@material-ui/core';
-import { TopSection, TopRight, LeftAccordion, MiddleCard } from './components';
+import { Container, Grid, Hidden } from '@material-ui/core';
+import {
+  TopSection,
+  TopRight,
+  LeftAccordion,
+  MiddleCard,
+  TitleBar
+} from './components';
 
 const useStyles = makeStyles(() => ({
   topSection: {
@@ -16,17 +22,28 @@ const SearchResult = () => {
 
   return (
     <Grid container>
-      <Grid
-        container
-        item
-        direction="column"
-        justify="center"
-        className={classes.topSection}
-      >
-        <Grid item>
-          <TopSection />
+      <Hidden mdDown>
+        <Grid
+          container
+          item
+          direction="column"
+          justify="center"
+          className={classes.topSection}
+        >
+          <Grid item>
+            <TopSection />
+          </Grid>
         </Grid>
-      </Grid>
+      </Hidden>
+
+      <Hidden lgUp>
+        <Grid container item direction="column">
+          <Grid item>
+            <TitleBar />
+          </Grid>
+        </Grid>
+      </Hidden>
+
       <Container>
         <Grid
           container
@@ -35,9 +52,11 @@ const SearchResult = () => {
           justify="space-around"
           alignItems="flex-start"
         >
-          <Grid item lg={5}>
-            <LeftAccordion />
-          </Grid>
+          <Hidden mdDown>
+            <Grid item lg={5}>
+              <LeftAccordion />
+            </Grid>
+          </Hidden>
           <Grid item container direction="column" lg={7} spacing={3}>
             <Grid item>
               <TopRight />

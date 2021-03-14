@@ -73,7 +73,7 @@ const Searchbar = (props) => {
           inputProps={{ 'aria-label': 'find here' }}
         />
         <Divider className={classes.divider} orientation="vertical" />
-        <RouterLink to="/searchResult">
+        <RouterLink to="/search">
           <IconButton
             type="submit"
             className={classes.iconButton}
