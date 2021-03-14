@@ -15,6 +15,14 @@ import SearchIcon from '@material-ui/icons/Search';
 import { Dropdown } from './components';
 
 const useStyles = makeStyles((theme) => ({
+  root: {
+    display: 'flex',
+    width: '50vw',
+    [theme.breakpoints.down('md')]: {
+      width: '100%',
+      padding: '0 1.5rem'
+    }
+  },
   searchContainer: {
     // padding: '2px 4px',
     display: 'flex',
@@ -24,10 +32,6 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: theme.spacing(1),
     borderRadius: '0 25px 25px 0'
     // width: 400
-  },
-  root: {
-    display: 'flex',
-    width: '50vw'
   },
   input: {
     marginLeft: theme.spacing(1),
