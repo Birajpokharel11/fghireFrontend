@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
 import * as Yup from 'yup';
 import { Formik } from 'formik';
@@ -16,6 +17,8 @@ import FacebookIcon from 'src/icons/Facebook';
 import GoogleIcon from 'src/icons/Google';
 import Page from 'src/components/Page';
 
+import container from './Login.container';
+
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: theme.palette.background.dark,
@@ -25,9 +28,11 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const LoginView = () => {
+const LoginView = (props) => {
   const classes = useStyles();
   const navigate = useNavigate();
+
+  const { onSigninStart } = props;
 
   return (
     <Page className={classes.root} title="Login">
@@ -48,10 +53,13 @@ const LoginView = () => {
                 .email('Must be a valid email')
                 .max(255)
                 .required('Email is required'),
-              password: Yup.string().max(255).required('Password is required')
+              password: Yup.string()
+                .max(255)
+                .required('Password is required')
             })}
-            onSubmit={() => {
-              navigate('/app/dashboard', { replace: true });
+            onSubmit={(values, { setSubmitting }) => {
+              onSigninStart(values, navigate);
+              setSubmitting(false);
             }}
           >
             {({
@@ -163,4 +171,8 @@ const LoginView = () => {
   );
 };
 
-export default LoginView;
+LoginView.propTypes = {
+  onSigninStart: PropTypes.func.isRequired
+};
+
+export default container(LoginView);
