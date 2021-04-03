@@ -1,7 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link as RouterLink } from 'react-router-dom';
-import { makeStyles } from '@material-ui/core/styles';
 import {
   Paper,
   // TextField,
@@ -9,20 +7,14 @@ import {
   Divider,
   IconButton
 } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
 // import SearchBar from 'material-ui-search-bar';
-import SearchIcon from '@material-ui/icons/Search';
+import { Link as RouterLink } from 'react-router-dom';
 
+import SearchIcon from '@material-ui/icons/Search';
 import { Dropdown } from './components';
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    display: 'flex',
-    width: '50vw',
-    [theme.breakpoints.down('md')]: {
-      width: '100%',
-      padding: '0 1.5rem'
-    }
-  },
   searchContainer: {
     // padding: '2px 4px',
     display: 'flex',
@@ -32,6 +24,10 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: theme.spacing(1),
     borderRadius: '0 25px 25px 0'
     // width: 400
+  },
+  root: {
+    display: 'flex',
+    width: '50vw'
   },
   input: {
     marginLeft: theme.spacing(1),
@@ -77,7 +73,7 @@ const Searchbar = (props) => {
           inputProps={{ 'aria-label': 'find here' }}
         />
         <Divider className={classes.divider} orientation="vertical" />
-        <RouterLink to="/search">
+        <RouterLink to="/searchResult">
           <IconButton
             type="submit"
             className={classes.iconButton}

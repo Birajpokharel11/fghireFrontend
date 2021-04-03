@@ -7,12 +7,13 @@ import Searchbar from 'src/components/Searchbar';
 const useStyles = makeStyles(() => ({
   heroContainer: {
     // backgroundImage: `url(${'static/images/banner.jpg'})`,
-    backgroundColor: '#111',
+    // backgroundColor: '#111',
+    backgroundImage:
+      'linear-gradient(to bottom, #123d69, #006a87, #3d9596, #88bea1, #d7e4b6)',
     height: '100%',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     width: '100%'
-    // backgroundColor: 'rgba(0, 0, 0, 0.5)',
   },
   mainFont: {
     fontSize: 45,
@@ -23,8 +24,8 @@ const useStyles = makeStyles(() => ({
   subtitle: {
     color: '#fff',
     fontWeight: 500,
-    fontSize: 20,
-    paddingBottom: 20
+    fontSize: 20
+    // paddingBottom: 20
   }
 }));
 
@@ -41,20 +42,20 @@ const Homepage = () => {
     <Grid
       container
       direction="column"
-      justify="center"
+      justify="space-evenly"
       alignItems="center"
       className={classes.heroContainer}
     >
       <Grid item align="center">
         <Typography className={classes.mainFont}>
           The Easiest Way to{' '}
-          <span style={{ color: 'rgb(3 144 255)' }}>Get Your New Job</span>
+          <span style={{ color: '#50a5ff' }}>Get Your New Job</span>
         </Typography>
         <Typography className={classes.subtitle}>
           Find Jobs, Employment & Career Opportunities
         </Typography>
       </Grid>
-      <Grid item style={{ marginTop: 60, marginBottom: 10 }}>
+      <Grid item style={{ marginBottom: '12em' }}>
         <Searchbar list={list} />
       </Grid>
     </Grid>

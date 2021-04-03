@@ -2,9 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
-import Grid from '@material-ui/core/Grid';
-import Button from '@material-ui/core/Button';
-import Divider from '@material-ui/core/Divider';
+import { Link } from 'react-router-dom';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 // import CardMedia from '@material-ui/core/CardMedia';
@@ -14,17 +12,19 @@ import Collapse from '@material-ui/core/Collapse';
 import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import Chip from '@material-ui/core/Chip';
 import { blue } from '@material-ui/core/colors';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
+import { Button, Divider, Grid, Paper } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     // maxWidth: 345,
-    width: '100%'
+    width: '100%',
+    border: '1px solid white',
+    '&:hover': { border: '1px solid blue' }
   },
   // media: {
   //   height: 0,
@@ -53,13 +53,6 @@ const useStyles = makeStyles((theme) => ({
     width: 100,
     // padding: '2px 8px',
     marginRight: 10
-  },
-  chips: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    '& > *': {
-      margin: theme.spacing(0.5)
-    }
   }
 }));
 
@@ -99,6 +92,8 @@ export default function CardContainer(props) {
             <Typography
               variant="h3"
               color="primary"
+              component={Link}
+              to="/projectResult"
               style={{ fontWeight: 800 }}
             >
               {title}
@@ -113,14 +108,18 @@ export default function CardContainer(props) {
               Budget: $1000
             </Typography>
           </Grid>
-          <Grid item className={classes.chips}>
+          <Grid item style={{ display: 'flex' }}>
             {skills.map((skill) => (
-              <Chip
-                key={skill.id}
-                label={skill.name}
-                color="primary"
-                variant="outlined"
-              />
+              <Paper key={skill.id} className={classes.skillbox} elevation={0}>
+                <Typography
+                  variant="overline"
+                  display="block"
+                  gutterBottom
+                  align="center"
+                >
+                  {skill.name}
+                </Typography>
+              </Paper>
             ))}
           </Grid>
         </Grid>

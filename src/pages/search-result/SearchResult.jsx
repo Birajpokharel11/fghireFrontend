@@ -12,7 +12,9 @@ import {
 const useStyles = makeStyles(() => ({
   topSection: {
     height: '30vh',
-    backgroundColor: '#111',
+    // backgroundColor: '#111',
+    backgroundImage:
+      'linear-gradient(to bottom, #123d69, #006a87, #3d9596, #88bea1, #d7e4b6)',
     marginBottom: '8vh'
   }
 }));

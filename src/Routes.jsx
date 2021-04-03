@@ -12,6 +12,7 @@ import RegisterView from 'src/pages/auth/Register';
 import SettingsView from 'src/pages/settings/SettingsView';
 import Homepage from './pages/homepage';
 import SearchResult from './pages/search-result';
+import ProjectResult from './pages/project-result';
 
 const routes = [
   {
@@ -32,9 +33,10 @@ const routes = [
     children: [
       { path: 'login', element: <LoginView /> },
       { path: 'register', element: <RegisterView /> },
-      { path: '404', element: <NotFoundView /> },
       { path: '/', element: <Homepage /> },
-      { path: '/search', element: <SearchResult /> },
+      { path: '/searchResult', element: <SearchResult /> },
+      { path: '/projectResult', element: <ProjectResult /> },
+      { path: '404', element: <NotFoundView /> },
       { path: '*', element: <Navigate to="/404" /> }
     ]
   }
