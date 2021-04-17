@@ -13,6 +13,7 @@ import SettingsView from 'src/pages/settings/SettingsView';
 import Homepage from './pages/homepage';
 import SearchResult from './pages/search-result';
 import ProjectResult from './pages/project-result';
+import PostPage from './pages/post-page';
 
 const routes = [
   {
@@ -31,6 +32,7 @@ const routes = [
     path: '/',
     element: <MainLayout />,
     children: [
+      { path: 'post', element: <PostPage /> },
       { path: 'login', element: <LoginView /> },
       { path: 'register', element: <RegisterView /> },
       { path: '/', element: <Homepage /> },
