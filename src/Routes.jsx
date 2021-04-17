@@ -10,10 +10,11 @@ import NotFoundView from 'src/pages/errors/NotFoundView';
 import ProductListView from 'src/pages/product/ProductListView';
 import RegisterView from 'src/pages/auth/Register';
 import SettingsView from 'src/pages/settings/SettingsView';
+import PostPage from 'src/components/post-page';
+
 import Homepage from './pages/homepage';
 import SearchResult from './pages/search-result';
 import ProjectResult from './pages/project-result';
-import PostPage from './pages/post-page';
 
 const routes = [
   {

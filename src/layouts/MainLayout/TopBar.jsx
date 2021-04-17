@@ -2,6 +2,8 @@ import React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
+import Button from '@material-ui/core/Button';
+
 import {
   AppBar,
   Toolbar,
@@ -25,6 +27,9 @@ const useStyles = makeStyles({
     fontSize: '2em',
     '&:hover': { color: 'white' }
     // marginLeft: '0.5em'
+  },
+  gap: {
+    flexGrow: '1'
   }
 });
 
@@ -45,6 +50,12 @@ const TopBar = ({ className, ...rest }) => {
           </Typography>
           {/* </Grid>
           </Grid> */}
+        </RouterLink>
+        <Typography className={classes.gap}> </Typography>
+        <RouterLink to="/post">
+          <Button variant="contained" color="primary">
+            Post a Job
+          </Button>
         </RouterLink>
       </Toolbar>
     </AppBar>
