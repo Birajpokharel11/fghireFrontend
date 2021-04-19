@@ -11,6 +11,7 @@ import ProductListView from 'src/pages/product/ProductListView';
 import RegisterView from 'src/pages/auth/Register';
 import SettingsView from 'src/pages/settings/SettingsView';
 import PostPage from 'src/components/post-page';
+import PlaceBid from 'src/components/PlaceBid';
 
 import Homepage from './pages/homepage';
 import SearchResult from './pages/search-result';
@@ -30,10 +31,16 @@ const routes = [
     ]
   },
   {
+    path: 'app1',
+    element: <DashboardLayout />,
+    children: [{ path: 'dashboard', element: <DashboardView /> }]
+  },
+  {
     path: '/',
     element: <MainLayout />,
     children: [
       { path: 'post', element: <PostPage /> },
+      { path: 'bid', element: <PlaceBid /> },
       { path: 'login', element: <LoginView /> },
       { path: 'register', element: <RegisterView /> },
       { path: '/', element: <Homepage /> },

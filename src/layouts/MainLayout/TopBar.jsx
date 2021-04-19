@@ -52,10 +52,11 @@ const TopBar = ({ className, ...rest }) => {
           </Grid> */}
         </RouterLink>
         <Typography className={classes.gap}> </Typography>
+        <RouterLink to="/app/dashboard">
+          <Button color="primary">Dashboard</Button>
+        </RouterLink>
         <RouterLink to="/post">
-          <Button variant="contained" color="primary">
-            Post a Job
-          </Button>
+          <Button color="primary">Post a Job</Button>
         </RouterLink>
       </Toolbar>
     </AppBar>
