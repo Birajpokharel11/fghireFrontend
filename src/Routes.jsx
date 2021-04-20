@@ -12,16 +12,17 @@ import RegisterView from 'src/pages/auth/Register';
 import SettingsView from 'src/pages/settings/SettingsView';
 import PostPage from 'src/components/post-page';
 import PlaceBid from 'src/components/PlaceBid';
-
 import Homepage from './pages/homepage';
 import SearchResult from './pages/search-result';
 import ProjectResult from './pages/project-result';
+import FreelancerProfile from './pages/account/AccountView/ProfileView';
 
 const routes = [
   {
     path: 'app',
     element: <DashboardLayout />,
     children: [
+      { path: 'profile', element: <FreelancerProfile /> },
       { path: 'account', element: <AccountView /> },
       { path: 'customers', element: <CustomerListView /> },
       { path: 'dashboard', element: <DashboardView /> },
@@ -30,11 +31,7 @@ const routes = [
       { path: '*', element: <Navigate to="/404" /> }
     ]
   },
-  {
-    path: 'app1',
-    element: <DashboardLayout />,
-    children: [{ path: 'dashboard', element: <DashboardView /> }]
-  },
+
   {
     path: '/',
     element: <MainLayout />,
