@@ -51,7 +51,7 @@ const useStyles = makeStyles(() => ({
 const EmploymentHistory = () => {
   const classes = useStyles();
   return (
-    <Grid item xs="8">
+    <Grid item xs="12">
       <Typography variant="h4" gutterBottom="True" className={classes.heading}>
         Employment History
       </Typography>

@@ -24,6 +24,7 @@ const routes = [
     children: [
       { path: 'profile', element: <FreelancerProfile /> },
       { path: 'account', element: <AccountView /> },
+      { path: 'post', element: <PostPage /> },
       { path: 'customers', element: <CustomerListView /> },
       { path: 'dashboard', element: <DashboardView /> },
       { path: 'products', element: <ProductListView /> },
@@ -36,7 +37,6 @@ const routes = [
     path: '/',
     element: <MainLayout />,
     children: [
-      { path: 'post', element: <PostPage /> },
       { path: 'bid', element: <PlaceBid /> },
       { path: 'login', element: <LoginView /> },
       { path: 'register', element: <RegisterView /> },

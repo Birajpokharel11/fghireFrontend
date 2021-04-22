@@ -17,14 +17,16 @@ import AttachFile from './AttachFile';
 import Validation from './Validation';
 
 const useStyles = makeStyles(() => ({
-  root: {
-    flexGrow: 1,
-    marginLeft: '20%',
-    marginRight: '30%',
-    marginTop: '6%'
-  },
+  // root: {
+  //   flexGrow: 1,
+  //   marginLeft: '20%',
+  //   marginRight: '30%',
+  //   marginTop: '6%'
+  // },
   paper: {
-    padding: '3%'
+    padding: '3%',
+    marginTop: '2%',
+    marginBottom: '2%'
   }
 }));
 

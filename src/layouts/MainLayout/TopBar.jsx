@@ -55,7 +55,7 @@ const TopBar = ({ className, ...rest }) => {
         <RouterLink to="/app/dashboard">
           <Button color="primary">Dashboard</Button>
         </RouterLink>
-        <RouterLink to="/post">
+        <RouterLink to="app/post">
           <Button color="primary">Post a Job</Button>
         </RouterLink>
       </Toolbar>

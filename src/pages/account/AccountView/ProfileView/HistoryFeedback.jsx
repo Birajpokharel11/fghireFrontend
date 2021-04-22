@@ -76,56 +76,50 @@ const useStyles = makeStyles(() => ({
 const HistoryFeedback = () => {
   const classes = useStyles();
   return (
-    <fragment>
-      <Grid item xs="8">
-        <Typography
-          variant="h4"
-          gutterBottom="True"
-          className={classes.heading}
-        >
-          Work History and Feedback
-        </Typography>
-        {history.map((item) => (
-          <Card className={classes.root}>
-            <CardContent>
-              <Typography className={classes.title} variant="h4" gutterBottom>
-                {item.skills}
+    <Grid item xs="12">
+      <Typography variant="h4" gutterBottom="True" className={classes.heading}>
+        Work History and Feedback
+      </Typography>
+      {history.map((item) => (
+        <Card className={classes.root}>
+          <CardContent>
+            <Typography className={classes.title} variant="h4" gutterBottom>
+              {item.skills}
+            </Typography>
+            <Box pt={1}>
+              <Typography variant="subtitle1" color="textSecondary">
+                {item.status}
               </Typography>
-              <Box pt={1}>
-                <Typography variant="subtitle1" color="textSecondary">
-                  {item.status}
-                </Typography>
-              </Box>
+            </Box>
 
-              <Grid item container spacing={2}>
-                <Grid item xs="12" sm="4" md="3">
-                  <Box
-                    component="fieldset"
-                    mb={1}
-                    borderColor="transparent"
-                    className={classes.ratingMargin}
-                  >
-                    <Rating value={item.rating} readOnly />
-                  </Box>
-                </Grid>
-                <Grid item xs="12" sm="8" md>
-                  <Paper elevation={0} className={classes.iconMargin}>
-                    <FiCalendar className={classes.inline} />
-                    <Typography className={classes.inline}>
-                      {item.date}
-                    </Typography>
-                  </Paper>
-                </Grid>
+            <Grid item container spacing={2}>
+              <Grid item xs="12" sm="4" md="3">
+                <Box
+                  component="fieldset"
+                  mb={1}
+                  borderColor="transparent"
+                  className={classes.ratingMargin}
+                >
+                  <Rating value={item.rating} readOnly />
+                </Box>
               </Grid>
+              <Grid item xs="12" sm="8" md>
+                <Paper elevation={0} className={classes.iconMargin}>
+                  <FiCalendar className={classes.inline} />
+                  <Typography className={classes.inline}>
+                    {item.date}
+                  </Typography>
+                </Paper>
+              </Grid>
+            </Grid>
 
-              <Typography variant="body2" component="p">
-                {item.feedback}
-              </Typography>
-            </CardContent>
-          </Card>
-        ))}
-      </Grid>
-    </fragment>
+            <Typography variant="body2" component="p">
+              {item.feedback}
+            </Typography>
+          </CardContent>
+        </Card>
+      ))}
+    </Grid>
   );
 };
 
