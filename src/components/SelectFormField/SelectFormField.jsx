@@ -40,7 +40,7 @@ export default function SelectFormField(props) {
           // InputLabelProps={{ shrink: false }}
           variant="outlined"
           label="Sort By: "
-          // margin="normal"
+        // margin="normal"
         />
       )}
     />

@@ -4,12 +4,22 @@
     "es6": true,
     "browser": true
   },
-  "extends": ["airbnb", "airbnb/hooks", "eslint:recommended", "prettier/react"],
+  "extends": [
+    "airbnb",
+    "airbnb/hooks",
+    "eslint:recommended",
+    "prettier/react"
+  ],
   "settings": {
     "import/resolver": {
       "node": {
-        "paths": ["src"],
-        "extensions": [".js", ".jsx"]
+        "paths": [
+          "src"
+        ],
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
       }
     }
   },
@@ -32,6 +42,7 @@
     "react/require-default-props": "off",
     "react/jsx-one-expression-per-line": "off",
     "object-curly-newline": "off",
-    "operator-linebreak": "off"
+    "operator-linebreak": "off",
+    "linebreak-style": 0
   }
 }

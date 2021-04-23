@@ -13,6 +13,8 @@ import SettingsView from 'src/pages/settings/SettingsView';
 import Homepage from './pages/homepage';
 import SearchResult from './pages/search-result';
 import ProjectResult from './pages/project-result';
+import Wallet from './pages/Wallet';
+import MyFavorities from './pages/my-favorities';
 
 const routes = [
   {
@@ -24,6 +26,8 @@ const routes = [
       { path: 'dashboard', element: <DashboardView /> },
       { path: 'products', element: <ProductListView /> },
       { path: 'settings', element: <SettingsView /> },
+      { path: 'wallet', element: <Wallet /> },
+      { path: 'myfavorities', element: <MyFavorities /> },
       { path: '*', element: <Navigate to="/404" /> }
     ]
   },
@@ -36,6 +40,7 @@ const routes = [
       { path: '/', element: <Homepage /> },
       { path: '/searchResult', element: <SearchResult /> },
       { path: '/projectResult', element: <ProjectResult /> },
+      { path: '/walletallet', element: <ProjectResult /> },
       { path: '404', element: <NotFoundView /> },
       { path: '*', element: <Navigate to="/404" /> }
     ]
