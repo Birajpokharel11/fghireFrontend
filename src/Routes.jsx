@@ -16,6 +16,7 @@ import Homepage from './pages/homepage';
 import SearchResult from './pages/search-result';
 import ProjectResult from './pages/project-result';
 import FreelancerProfile from './pages/account/AccountView/ProfileView';
+import EmployerProfile from './pages/account/AccountView/EmployerProfile/EmployerProfile';
 
 const routes = [
   {
@@ -23,6 +24,7 @@ const routes = [
     element: <DashboardLayout />,
     children: [
       { path: 'profile', element: <FreelancerProfile /> },
+      { path: 'eprofile', element: <EmployerProfile /> },
       { path: 'account', element: <AccountView /> },
       { path: 'post', element: <PostPage /> },
       { path: 'customers', element: <CustomerListView /> },

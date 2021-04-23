@@ -1,10 +1,9 @@
 import React from 'react';
 import makeStyles from '@material-ui/core/styles/makeStyles';
+import PropTypes from 'prop-types';
 import { Avatar, Grid, Typography, ButtonBase, Box } from '@material-ui/core';
 import VerifiedUserIcon from '@material-ui/icons/VerifiedUser';
-
 import Rating from '@material-ui/lab/Rating';
-import ProfilePic from 'src/icons/ProfilePic.jpg';
 import ReactCountryFlag from 'react-country-flag';
 
 const useStyles = makeStyles((theme) => ({
@@ -47,22 +46,24 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const TopSection = () => {
+const TopSection = ({
+  name,
+  skills,
+  country,
+  status,
+  rating,
+  countryIcon,
+  image
+}) => {
+  // console.log(data);
   const classes = useStyles();
-  const profile = {
-    name: 'Linda Mcarthy',
-    skills: 'iOS Expert + Node Dev',
-    country: 'England',
-    status: true,
-    rating: 4,
-    countryIcon: 'US'
-  };
+
   return (
     // <Paper elevation={0} className={classes.root}>
     <Grid container spacing={3} direction="row" className={classes.top}>
       <Grid item container xs={3} sm={3} direction="row" justify="flex-end">
         <ButtonBase>
-          <Avatar className={classes.image} alt="Remy Sharp" src={ProfilePic} />
+          <Avatar className={classes.image} alt="Remy Sharp" src={image} />
         </ButtonBase>
       </Grid>
 
@@ -70,31 +71,31 @@ const TopSection = () => {
         <Grid item xs container direction="column" spacing={2}>
           <Grid item xs>
             <Typography gutterBottom variant="h3">
-              {profile.name}
+              {name}
             </Typography>
-            <Typography variant="h4">{profile.skills}</Typography>
+            <Typography variant="h4">{skills}</Typography>
           </Grid>
           <Grid item container spacing={3}>
             <Grid item>
               <Box component="fieldset" mb={3} borderColor="transparent">
-                <Rating name="read-only" value={profile.rating} readOnly />
+                <Rating name="read-only" value={rating} readOnly />
               </Box>
             </Grid>
             <Grid item>
               <ReactCountryFlag
-                countryCode={profile.countryIcon}
+                countryCode={countryIcon}
                 svg
                 style={{
                   width: '1.5em',
                   height: '1.5em'
                 }}
-                title={profile.countryIcon}
+                title={countryIcon}
               />
               <Typography className={classes.iconMargin} variant="h5">
-                {profile.country}
+                {country}
               </Typography>
             </Grid>
-            {profile.status && (
+            {status && (
               <Grid item>
                 <VerifiedUserIcon />
                 <Typography variant="h5" className={classes.iconMargin}>
@@ -108,6 +109,16 @@ const TopSection = () => {
     </Grid>
     // </Paper>
   );
+};
+
+TopSection.propTypes = {
+  name: PropTypes.string.isRequired,
+  skills: PropTypes.string.isRequired,
+  country: PropTypes.string.isRequired,
+  status: PropTypes.bool.isRequired,
+  rating: PropTypes.string.isRequired,
+  countryIcon: PropTypes.string.isRequired,
+  image: PropTypes.object.isRequired
 };
 
 export default TopSection;
