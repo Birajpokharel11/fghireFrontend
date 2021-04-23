@@ -19,7 +19,7 @@ const EmployerProfile = () => {
     <>
       <TopSection
         name="Acodia"
-        type="Software House"
+        skills="Software House"
         rating={4}
         country="USA"
         status="true"
