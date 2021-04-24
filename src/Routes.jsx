@@ -17,6 +17,8 @@ import SearchResult from './pages/search-result';
 import ProjectResult from './pages/project-result';
 import FreelancerProfile from './pages/account/AccountView/ProfileView';
 import EmployerProfile from './pages/account/AccountView/EmployerProfile/EmployerProfile';
+import Wallet from './pages/Wallet';
+import MyFavorities from './pages/my-favorities';
 
 const routes = [
   {
@@ -31,6 +33,8 @@ const routes = [
       { path: 'dashboard', element: <DashboardView /> },
       { path: 'products', element: <ProductListView /> },
       { path: 'settings', element: <SettingsView /> },
+      { path: 'wallet', element: <Wallet /> },
+      { path: 'myfavorities', element: <MyFavorities /> },
       { path: '*', element: <Navigate to="/404" /> }
     ]
   },
@@ -45,6 +49,7 @@ const routes = [
       { path: '/', element: <Homepage /> },
       { path: '/searchResult', element: <SearchResult /> },
       { path: '/projectResult', element: <ProjectResult /> },
+      { path: '/walletallet', element: <ProjectResult /> },
       { path: '404', element: <NotFoundView /> },
       { path: '*', element: <Navigate to="/404" /> }
     ]
